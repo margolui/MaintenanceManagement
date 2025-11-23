@@ -4,7 +4,7 @@ page 50102 "Service Order Card"
     Caption = 'Service Order Card';
     PageType = Card;
     SourceTable = "MM Service Order";
-    
+
     layout
     {
         area(Content)
@@ -12,7 +12,7 @@ page 50102 "Service Order Card"
             group(General)
             {
                 Caption = 'General';
-                
+
                 field("MM No."; Rec."MM No.")
                 {
                     ToolTip = 'Specifies the value of the No. field.', Comment = '%';

@@ -1,6 +1,6 @@
 table 50102 "MM Maintenance Log"
 {
-    Caption = 'MM Maintenance Log';
+    Caption = 'Maintenance Log';
     DataClassification = CustomerContent;
 
     fields
@@ -17,7 +17,7 @@ table 50102 "MM Maintenance Log"
         {
             Caption = 'Date';
         }
-        field(4; "Type"; Enum "Maintenance Log Type")
+        field(4; Type; Enum "MM Maintenance Log Type")
         {
             Caption = 'Type';
         }

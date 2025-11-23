@@ -4,7 +4,8 @@ page 50103 "Maintenance Log List"
     Caption = 'Maintenance Log List';
     PageType = List;
     SourceTable = "MM Maintenance Log";
-    
+    UsageCategory = Lists;
+
     layout
     {
         area(Content)
@@ -35,6 +36,27 @@ page 50103 "Maintenance Log List"
                 {
                     ToolTip = 'Specifies the value of the Notes field.', Comment = '%';
                 }
+            }
+        }
+    }
+    actions
+    {
+        area(processing)
+        {
+            action(FilterByType)
+            {
+                Caption = 'Filter by Type';
+                ApplicationArea = All;
+                trigger OnAction()
+                var
+                    RecFilter: Record "MM Maintenance Log";
+                    SelectedType: Enum "MM Maintenance Log Type";
+                begin
+                    // Тут показуємо Page для вибору Enum, наприклад
+                    // І застосовуємо SetFilter до Record
+                    RecFilter.SetFilter(Type, '%1', SelectedType.AsInteger());
+                    Page.Run(Page::"Maintenance Log List", RecFilter);
+                end;
             }
         }
     }

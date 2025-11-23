@@ -1,7 +1,7 @@
-enum 50101 "Maintenance Log Type"
+enum 50101 "MM Maintenance Log Type"
 {
     Extensible = true;
-    
+
     value(0; Inspection)
     {
         Caption = 'Inspection';

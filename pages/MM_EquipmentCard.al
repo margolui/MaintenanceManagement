@@ -1,7 +1,7 @@
 page 50101 "MM Equipment Card"
 {
     ApplicationArea = All;
-    Caption = 'MM Equipment Card';
+    Caption = 'Equipment Card';
     PageType = Card;
     SourceTable = "MM Equipment";
 

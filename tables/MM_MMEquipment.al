@@ -1,6 +1,6 @@
 table 50100 "MM Equipment"
 {
-    Caption = 'MM Equipment';
+    Caption = 'Equipment';
     DataClassification = CustomerContent;
 
     fields
