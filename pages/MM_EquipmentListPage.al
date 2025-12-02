@@ -37,10 +37,12 @@ page 50100 "MM Equipment List"
                     ToolTip = 'Specifies the value of the Status field.', Comment = '%';
                 }
             }
-            //Actions / Buttons:
-            //Create Service Order → відкриває Service Order Card
-            //Upload Photo → BLOB Upload
-            //Open Manual → BLOB Download
         }
     }
+    trigger OnOpenPage()
+    var
+        MmManagement: Codeunit "MM Management";
+    begin
+        MmManagement.TestSalesLineFilter();
+    end;
 }
