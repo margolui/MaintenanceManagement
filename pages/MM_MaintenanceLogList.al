@@ -5,6 +5,7 @@ page 50103 "Maintenance Log List"
     PageType = List;
     SourceTable = "MM Maintenance Log";
     UsageCategory = Lists;
+    DelayedInsert = true;
 
     layout
     {
@@ -12,6 +13,10 @@ page 50103 "Maintenance Log List"
         {
             repeater(General)
             {
+                field("Employee No."; Rec."Employee No.")
+                {
+                    ToolTip = 'Specifies the value of the Employee No. field.', Comment = '%';
+                }
                 field("Entry No."; Rec."Entry No.")
                 {
                     ToolTip = 'Specifies the value of the Entry No. field.', Comment = '%';
@@ -36,6 +41,31 @@ page 50103 "Maintenance Log List"
                 {
                     ToolTip = 'Specifies the value of the Notes field.', Comment = '%';
                 }
+                field(Status; Rec.Status)
+                {
+                    ToolTip = 'Specifies the value of the Status field.', Comment = '%';
+                }
+                field("Posting Date"; Rec."Posting Date")
+                {
+                    ToolTip = 'Specifies the value of the Posting Date field.', Comment = '%';
+                }
+                field("Duration (Hours)"; Rec."Duration (Hours)")
+                {
+                    ToolTip = 'Specifies the value of the Duration (Hours) field.', Comment = '%';
+                }
+                field("Location Code"; Rec."Location Code")
+                {
+                    ToolTip = 'Specifies the value of the Location Code field.', Comment = '%';
+                }
+                field("Machine No."; Rec."Machine No.")
+                {
+                    ToolTip = 'Specifies the value of the Machine No. field.', Comment = '%';
+                }
+                field("Vendor No."; Rec."Vendor No.")
+                {
+                    ToolTip = 'Specifies the value of the Vendor No. field.', Comment = '%';
+                }
+
             }
         }
     }

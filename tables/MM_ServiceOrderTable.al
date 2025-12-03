@@ -25,7 +25,7 @@ table 50101 "MM Service Order"
         {
             Caption = 'Technician';
         }
-        field(6; "MM Status"; Enum "MM Status")
+        field(6; "MM Status"; Enum "MM Maintenance Status")
         {
             Caption = 'Status';
         }

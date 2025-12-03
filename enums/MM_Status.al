@@ -1,4 +1,4 @@
-enum 50100 "MM Status"
+enum 50100 "MM Maintenance Status"
 {
     Extensible = true;
 
@@ -6,12 +6,12 @@ enum 50100 "MM Status"
     {
         Caption = 'Active';
     }
-    value(1; "Needs Service")
+    value(1; "In Progress")
     {
-        Caption = 'Needs Service';
+        Caption = 'In Progress';
     }
-    value(2; "Out of Order")
+    value(2; Closed)
     {
-        Caption = 'Out of Order';
+        Caption = 'Closed';
     }
 }

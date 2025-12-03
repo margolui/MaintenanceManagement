@@ -25,7 +25,7 @@ table 50100 "MM Equipment"
         {
             Caption = 'Next Service Date';
         }
-        field(6; "MM Status"; Enum "MM Status")
+        field(6; "MM Status"; Enum "MM Maintenance Status")
         {
             Caption = 'Status';
         }

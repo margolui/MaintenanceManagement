@@ -79,4 +79,29 @@ codeunit 50110 "MM Management"
         exit(SalesLine."Amount Including VAT");
     end;
 
+    procedure BonusCalc(MaintenanceLog: Record "MM Maintenance Log")
+    var
+        EmployeeBonusLog: Record "MM Employee Bonus Log";
+        BonusAmount: Decimal;
+        Employee: Record Employee;
+    begin
+
+        case MaintenanceLog.Type of
+            MaintenanceLog.Type::Repair:
+                BonusAmount := 10;
+            MaintenanceLog.Type::Cleaning:
+                BonusAmount := 5;
+            MaintenanceLog.Type::Replacement:
+                BonusAmount := 15;
+            MaintenanceLog.Type::Inspection:
+                BonusAmount := 8;
+        end;
+
+        EmployeeBonusLog.Init();
+        EmployeeBonusLog."Employee No." := MaintenanceLog."Employee No.";
+        EmployeeBonusLog."Bonus Amount" := BonusAmount;
+        EmployeeBonusLog."Posting Date" := Today;
+        EmployeeBonusLog."Maintenance ID" := MaintenanceLog."Entry No.";
+        EmployeeBonusLog.Insert();
+    end;
 }
