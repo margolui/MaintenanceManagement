@@ -6,7 +6,7 @@ codeunit 50110 "MM Management"
         SalesLine: Record "Sales Line";
         Total: Decimal;
     begin
-        SalesLine.SetRange("Document Type", SalesLine."Document Type"::Order);
+        /* SalesLine.SetRange("Document Type", SalesLine."Document Type"::Order);
         SalesLine.SetRange("Document No.", '101001');
 
         if SalesLine.FindSet() then
@@ -21,7 +21,7 @@ codeunit 50110 "MM Management"
                     Total
                 );
 
-            until SalesLine.Next() = 0;
+            until SalesLine.Next() = 0; */
     end;
 
     procedure CalcAmount(SalesHeader: Record "Sales Header")
