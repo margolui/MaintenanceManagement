@@ -1,4 +1,4 @@
-page 50102 "Service Order Card"
+page 50102 "MM Service Order Card"
 {
     ApplicationArea = All;
     Caption = 'Service Order Card';

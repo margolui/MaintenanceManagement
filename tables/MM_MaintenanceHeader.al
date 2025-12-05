@@ -1,6 +1,6 @@
 table 50104 "MM Maintenance Header"
 {
-    Caption = 'MM Maintenance Header';
+    Caption = 'Maintenance Header';
     DataClassification = CustomerContent;
 
     fields

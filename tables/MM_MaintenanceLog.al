@@ -2,8 +2,8 @@ table 50102 "MM Maintenance Log"
 {
     Caption = 'Maintenance Log';
     DataClassification = CustomerContent;
-    DrillDownPageId = "Maintenance Log List";
-    LookupPageID = "Maintenance Log List";
+    DrillDownPageId = "MM Maintenance Log List";
+    LookupPageID = "MM Maintenance Log List";
 
     fields
     {

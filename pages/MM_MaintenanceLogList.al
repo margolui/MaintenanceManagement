@@ -1,4 +1,4 @@
-page 50103 "Maintenance Log List"
+page 50103 "MM Maintenance Log List"
 {
     ApplicationArea = All;
     Caption = 'Maintenance Log List';
@@ -85,7 +85,7 @@ page 50103 "Maintenance Log List"
                     // Тут показуємо Page для вибору Enum, наприклад
                     // І застосовуємо SetFilter до Record
                     RecFilter.SetFilter(Type, '%1', SelectedType.AsInteger());
-                    Page.Run(Page::"Maintenance Log List", RecFilter);
+                    Page.Run(Page::"MM Maintenance Log List", RecFilter);
                 end;
             }
         }
