@@ -104,4 +104,36 @@ codeunit 50110 "MM Management"
         EmployeeBonusLog."Maintenance ID" := MaintenanceLog."Entry No.";
         EmployeeBonusLog.Insert();
     end;
+
+    /*
+The client has the following requirement:
+When a manager changes the Unit Price in a Sales Order document, the system must:
+Check whether the discount exceeds 20% compared to the standard price.
+If it does, the system should display a WARNING and write a log entry into a new table called "Price Change Log".
+    */
+
+    [EventSubscriber(ObjectType::Table, Database::"Sales Line", OnBeforeValidateUnitPrice, '', false, false)]
+    local procedure OnBeforeValidateUnitPrice_SalesLine(var SalesLine: Record "Sales Line"; CurrentFieldNo: Integer; var IsHandled: Boolean)
+    var
+        Item: Record Item;
+        DiscountPercentage: Decimal;
+        StandardPrice: Decimal;
+        PriceChangeLog: Record "MM Price Change Log";
+    begin
+        Item.Get(SalesLine."No.");
+        StandardPrice := Item."Unit Price";
+        DiscountPercentage := ((StandardPrice - SalesLine."Unit Price") / StandardPrice) * 100;
+        if
+        DiscountPercentage > 20 then begin
+            Message('WARNING: The discount of %1%% exceeds the allowed limit of 20%%.', DiscountPercentage);
+
+            // Insert a log entry into the "Price Change Log" table
+
+            PriceChangeLog.Init();
+            PriceChangeLog."Line No." := SalesLine."Line No.";
+            PriceChangeLog."Old Unit Price" := StandardPrice;
+            PriceChangeLog."New Unit Price" := SalesLine."Unit Price";
+            PriceChangeLog.Insert();
+        end;
+    end;
 }
