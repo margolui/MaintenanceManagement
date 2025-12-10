@@ -44,7 +44,7 @@ table 50104 "MM Maintenance Header"
             FieldClass = FlowField;
             CalcFormula = sum("MM Maintenance Line"."Line Amount" where("Document No." = field("No.")));
         }
-        field(7; "Creation Date"; Date)
+        field(7; "Order Date"; Date)
         {
             Caption = 'Order Date';
         }

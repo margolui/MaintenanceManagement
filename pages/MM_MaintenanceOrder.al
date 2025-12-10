@@ -46,9 +46,9 @@ page 50105 "MM Maintenance List"
                 {
                     ToolTip = 'Specifies the value of the Assigned Technician field.', Comment = '%';
                 }
-                field("Creation Date"; Rec."Creation Date")
+                field("Order Date"; Rec."Order Date")
                 {
-                    ToolTip = 'Specifies the value of the Creation Date field.', Comment = '%';
+                    ToolTip = 'Specifies the value of the Order Date field.', Comment = '%';
                 }
                 field(Status; Rec.Status)
                 {

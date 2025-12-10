@@ -62,4 +62,11 @@ page 50106 "MM Maintenance Order Subform"
             }
         }
     }
+    procedure ForceTotalsCalculation()
+    begin
+        DocumentTotals.SalesDocTotalsNotUpToDate();
+    end;
+
+    var
+        DocumentTotals: Codeunit "Document Totals";
 }
