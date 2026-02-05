@@ -28,11 +28,13 @@ codeunit 50110 "MM Management"
     var
         SalesLine: Record "Sales Line";
         MaxAmount: Decimal;
+        LineNo: Integer;
 
         LineNos: Text;
         Qty: Decimal;
         MaxLineNo: Text;
         TextResult: Text;
+
     begin
         SalesLine.SetRange("Document Type", SalesHeader."Document Type");
         SalesLine.SetRange("Document No.", SalesHeader."No.");
@@ -40,11 +42,13 @@ codeunit 50110 "MM Management"
         // Пошук найдорожчого рядка
         if SalesLine.FindSet() then
             repeat
-                if SalesLine.Quantity * SalesLine."Unit Price" > MaxAmount then
+                if SalesLine.Quantity * SalesLine."Unit Price" > MaxAmount then begin
                     MaxAmount := SalesLine.Quantity * SalesLine."Unit Price";
+                    LineNo := SalesLine."Line No.";
+                end;
 
             until SalesLine.Next() = 0;
-        Message('Line is %2 The highest total: %1', MaxAmount, SalesLine."No.");
+        Message('Line is %2 The highest total: %1', MaxAmount, LineNo);
     end;
 
     /* procedure TotalIcncVat(SalesHeader: Record "Sales Header")

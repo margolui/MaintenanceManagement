@@ -11,9 +11,9 @@ table 50102 "MM Maintenance Log"
         {
             Caption = 'Entry No.';
         }
-        field(2; "Equipment No."; Code[20])
+        field(2; "Item No."; Code[20])
         {
-            Caption = 'Equipment No.';
+            Caption = 'Item No.';
         }
         field(3; "Date"; Date)
         {

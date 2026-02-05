@@ -43,9 +43,9 @@ page 50106 "MM Maintenance Order Subform"
                 {
                     ToolTip = 'Specifies the value of the Description field.', Comment = '%';
                 }
-                field("Equipment No."; Rec."Equipment No.")
+                field("Item No."; Rec."Item No.")
                 {
-                    ToolTip = 'Specifies the value of the Equipment No. field.', Comment = '%';
+                    ToolTip = 'Specifies the value of the Item No. field.', Comment = '%';
                 }
                 field("Location Code"; Rec."Location Code")
                 {

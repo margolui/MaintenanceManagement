@@ -21,9 +21,9 @@ page 50103 "MM Maintenance Log List"
                 {
                     ToolTip = 'Specifies the value of the Entry No. field.', Comment = '%';
                 }
-                field("Equipment No."; Rec."Equipment No.")
+                field("Item No."; Rec."Item No.")
                 {
-                    ToolTip = 'Specifies the value of the Equipment No. field.', Comment = '%';
+                    ToolTip = 'Specifies the value of the Item No. field.', Comment = '%';
                 }
                 field("Date"; Rec."Date")
                 {

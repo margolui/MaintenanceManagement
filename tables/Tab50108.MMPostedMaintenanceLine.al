@@ -1,7 +1,7 @@
-table 50105 "MM Maintenance Line"
+table 50108 "MM Posted Maintenance Line"
 {
-    Caption = 'Maintenance Line';
-    DataClassification = CustomerContent;
+    Caption = 'Posted Maintenance Line';
+    DataClassification = ToBeClassified;
 
     fields
     {
@@ -24,10 +24,6 @@ table 50105 "MM Maintenance Line"
         field(5; Quantity; Decimal)
         {
             Caption = 'Quantity';
-            trigger OnValidate()
-            begin
-                CalcLineAmount();
-            end;
         }
         field(6; "Line Amount"; Decimal)
         {
@@ -41,11 +37,6 @@ table 50105 "MM Maintenance Line"
         field(8; "Unit Price"; Decimal)
         {
             Caption = 'Unit Price';
-
-            trigger OnValidate()
-            begin
-                CalcLineAmount();
-            end;
         }
         field(9; "Location Code"; Code[20])
         {
@@ -63,14 +54,6 @@ table 50105 "MM Maintenance Line"
         {
             Caption = 'Item No.';
             TableRelation = Item;
-
-            trigger OnValidate()
-            var
-                Item: Record Item;
-            begin
-                if Item.Get("Item No.") then
-                    Validate("Unit Price", Item."Unit Price");
-            end;
         }
     }
     keys
@@ -80,8 +63,4 @@ table 50105 "MM Maintenance Line"
             Clustered = true;
         }
     }
-    procedure CalcLineAmount()
-    begin
-        "Line Amount" := Round(Quantity * "Unit Price");
-    end;
 }
